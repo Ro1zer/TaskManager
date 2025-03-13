@@ -7,7 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -47,11 +49,13 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun TaskManager(taskStatus: String, taskComplement: String, modifier: Modifier = Modifier) {
+fun TaskManager(taskStatus: String, taskComplement: String) {
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = modifier
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth()
     ) {
         Image(
             painter = painterResource(R.drawable.ic_task_completed),
